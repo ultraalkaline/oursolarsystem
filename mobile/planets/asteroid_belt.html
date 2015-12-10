@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>The Asteroid Belt</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="asteroid_belt.css">
+	<link rel="shortcut icon" href="../../favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+	</script>
+	<script>	
+		function changeSize() {
+			var celestialBody = document.getElementsByClassName("celestialBody");
+			$(celestialBody).css("width", "4em");
+			$(celestialBody).css("height", "4em");
+		}
+	</script>
+	<script>
+		function backgroundChange() {
+			$('body, html').css({'background-color': '#121A1F'});
+		}
+	</script>
+	<script>
+		function fadeTitle() {
+			$('.title').hide().fadeIn(2000);
+		}
+	</script>
+	<script>
+		window.onload=function() {
+			backgroundChange();
+			fadeTitle();
+			changeSize();
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+					&& location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						$target = $target.length && $target
+						|| $('[name=' + this.hash.slice(1) +']');
+					if ($target.length) {
+						var targetOffset = $target.offset().top;
+						$('html, body')
+						.animate({scrollTop: targetOffset}, 1000);
+					return false;
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="links">
+		<a class="table" href="#table-title"><img src="..\..\images\table.png" alt="Table of Facts"/></a>
+		<a class="asteroid-belt" href="#asteroid-belt-circle"><img src="..\..\images\planet.png" alt="Back to Top"/></a>
+	</div>
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="../solar_system.html">
+			<img class="selected" src="..\..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="../about.html">
+			<img src="..\..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="../keywords.html">
+			<img src="..\..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="../more.html">
+			<img src="..\..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	
+	<div id="content">
+	
+	<div id="asteroid-belt-orbit">
+		<img src="..\..\images\asteroid_belt.png" alt="Asteroid Belt"/>
+	</div>
+	<h1 id="asteroid-belt-title" class="title"><a href="http://en.wikipedia.org/wiki/Asteroid_belt">The Asteroid Belt</a></h1>
+	<div id="asteroid-belt-info">
+		<img id="asteroid-belt-symbol" src="..\..\images\symbols\asteroid_symbol.png" alt="Mercury Symbol"/>
+		<h2 id="asteroid-belt-description">
+			The Asteroid Belt is a region between Jupiter's and Mars's orbital areas.
+			The four largest objects in this belt are Ceres, Vesta, Pallas, and Hygiea. Their masses combined makes up half of the whole belt's total mass.
+			The belt is located 2.2 to 3.2 &#42;(Au) from the sun.
+		</h2>
+		
+	</div>
+	
+	<h3 id="table-title">Table of Facts</h3>
+	<div id="asteroid-belt-table" align="center">
+		<table class="span-table">
+			<tr class="span-table-row">
+				<td class="table-row">Mass</td>
+				<td class="table-data">2.8 x 10<sup>21</sup> kg to 3.2 x 10<sup>21</sup> kg (total)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Orbit Period</td>
+				<td class="table-data">(Sun, Jupiter &amp; Mars)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Radius</td>
+				<td class="table-data">375000 km (combined) (0.54 <span><a href="../keywords.html">&#42;R<sub>&#9737;</sub></a></span>)</td>
+			</tr>
+			<tr class="span-table-row">
+			<td class="table-row">Gravity</td>
+				<td class="table-data">&#42;varies&#42; m/s<sup>2</sup></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Temperature</td>
+				<td class="table-data">&#42;varies&#42;<span><a href="../keywords.html"> &#42;K</a></span></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Moon(s)</td>
+				<td class="table-data">wat</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>

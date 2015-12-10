@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>The Sun</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="sun.css">
+	<link rel="shortcut icon" href="../../favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+	</script>
+	<script>	
+		function changeSize() {
+			var celestialBody = document.getElementsByClassName("celestialBody");
+			$(celestialBody).css("width", "6em");
+			$(celestialBody).css("height", "6em");
+		}
+	</script>
+	<script>
+		function backgroundChange() {
+			$('body, html').css({'background-color': '#121A1F'});
+		}
+	</script>
+	<script>
+		function fadeTitle() {
+			$('.title').hide().fadeIn(2000);
+		}
+	</script>
+	<script>
+		window.onload=function() {
+			backgroundChange();
+			fadeTitle();
+			changeSize();
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+					&& location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						$target = $target.length && $target
+						|| $('[name=' + this.hash.slice(1) +']');
+					if ($target.length) {
+						var targetOffset = $target.offset().top;
+						$('html, body')
+						.animate({scrollTop: targetOffset}, 1000);
+					return false;
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="links">
+		<a class="table" href="#table-title"><img src="..\..\images\table.png" alt="Table of Facts"/></a>
+		<a class="sun" href="#sun-circle"><img src="..\..\images\planet.png" alt="Back to Top"/></a>
+	</div>
+	
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="../solar_system.html">
+			<img class="selected" src="..\..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="../about.html">
+			<img src="..\..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="../keywords.html">
+			<img src="..\..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="../more.html">
+			<img src="..\..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	<div id="content">
+	<div id="sun-container">
+		<div id="sun-circle" class="celestialBody">
+		</div>
+	</div>
+	<h1 id="sun-title" class="title">The Sun</h1>
+	<div id="sun-info">
+		<img id="sun-symbol" src="..\..\images\symbols\sun_symbol.png" alt="Sun Symbol"/>
+		<h2 id="sun-description">
+			The centerpiece of our solar system.<br> Did you know that the Sun actually consists mostly of hydrogen and helium?				
+			The heat and light we recieve actually comes from the nuclear fusion that occurs inside the Sun, which releases huge amounts of energy. Its mass is so huge, 
+			that it makes up 99.8% of our entire solar system's mass.
+		</h2>
+		
+	</div>
+	
+	<h3 id="table-title">Table of Facts</h3>
+	<div id="sun-table" align="center">
+	<table class="span-table">
+		<tr class="span-table-row">
+			<td class="table-row">Mass</td>
+			<td class="table-data">1.989 x 10<sup>30</sup> kg</td>
+		</tr>
+		<tr class="span-table-row">
+			<td class="table-row">Orbit Period</td>
+			<td class="table-data">225-250 mil years (<span><a href="../keywords.html">&#42;Sgr A&#42;</a></span>)</td>
+		</tr>
+		<tr class="span-table-row">
+			<td class="table-row">Radius</td>
+			<td class="table-data">6.955 x 10<sup>5</sup> km (1 <span><a href="../keywords.html">&#42;R<sub>&#9737;</sub></a></span>)</td>
+		</tr>
+		<tr class="span-table-row">
+			<td class="table-row">Gravity</td>
+			<td class="table-data">274.0 m/s<sup>2</sup></td>
+		</tr>
+		<tr class="span-table-row">
+			<td class="table-row">Temperature</td>
+			<td class="table-data">5778 <span><a href="../keywords.html">&#42;K</a></span></td>
+		</tr>
+		<tr class="span-table-row">
+			<td class="table-row">Moon(s)</td>
+			<td class="table-data">None</td>
+		</tr>
+	</table>
+	</div>
+	</div>
+</body>
+</html>

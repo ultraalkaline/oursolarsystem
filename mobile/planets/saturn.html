@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Saturn</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="saturn.css">
+	<link rel="shortcut icon" href="../../favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+	</script>
+	<script>	
+		function changeSize() {
+			var celestialBody = document.getElementsByClassName("celestialBody");
+			$(celestialBody).css("width", "2em");
+			$(celestialBody).css("height", "2em");
+		}
+	</script>
+	<script>
+		function fadeIn() {
+			var rings = document.getElementById('saturn-rings');
+			$(rings).fadeIn(4000);
+		}
+	</script>
+	<script>
+		function backgroundChange() {
+			var $root = $('html, body');
+			$root.css({'background-color': '#121A1F'});
+		}
+	</script>
+	<script>
+		function fadeTitle() {
+			$('.title').hide().fadeIn(2000);
+		}
+	</script>
+	<script>
+		window.onload=function() {
+			backgroundChange();
+			fadeTitle();
+			changeSize();
+			fadeIn();
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+					&& location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						$target = $target.length && $target
+						|| $('[name=' + this.hash.slice(1) +']');
+					if ($target.length) {
+						var targetOffset = $target.offset().top;
+						$('html, body')
+						.animate({scrollTop: targetOffset}, 1000);
+					return false;
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="links">
+		<a class="table" href="#table-title"><img src="..\..\images\table.png" alt="Table of Facts"/></a>
+		<a class="saturn" href="#saturn-circle"><img src="..\..\images\planet.png" alt="Back to Top"/></a>
+	</div>
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="../solar_system.html">
+			<img class="selected" src="..\..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="../about.html">
+			<img src="..\..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="../keywords.html">
+			<img src="..\..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="../more.html">
+			<img src="..\..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	
+	<div id="content">
+	
+	<div id="saturn-container">
+		<div id="saturn-circle" class="celestialBody" onload="changeSize()">
+		</div>
+		<div id="saturn-rings" onload="fadeIn()">
+		</div>
+	</div>
+	<div id="moons-container">
+		<div id="titan-orbit">
+			<div id="titan-circle">
+			</div>
+		</div>
+		<div id="enceladus-orbit">
+			<div id="enceladus-circle">
+			</div>
+		</div>
+		<div id="mimas-orbit">
+			<div id="mimas-circle">
+			</div>
+		</div>
+	</div>
+	<h1 id="saturn-title" class="title"><a href="http://en.wikipedia.org/wiki/Saturn">Saturn</a></h1>
+	<div id="saturn-info">
+		<img id="saturn-symbol" src="..\..\images\symbols\saturn_symbol.png" alt="Saturn Symbol"/>
+		<h2 id="saturn-description">
+			Saturn was the most distant of the five planets known to the ancients. 
+			Being similar to Jupiter, Saturn is mostly made of hydrogen and helium. Though its rings are mostly made of chunks of ice 
+			and small amounts of carbonaceous dust. The rings are very stretchy (very = 120700 km) but are amazingly thin (amazingly = 20 m).
+			<br>Having a moon that has a 1/3 of the Earth's radius, there is a possibility that Saturn's largest moon Titan might contain life just like on Earth.
+			Its conditions are similar to Earth's early ears, the main difference being that it's much colder than Earth because of its larger distance from the Sun (9.54 <span><a href="keywords.html">&#42;Au</a></span>).
+			This is an active open topic and discussion of scientific assessment and research.	
+		</h2>
+	</div>
+	
+	<h3 id="table-title">Table of Facts</h3>
+	<div id="saturn-table" align="center">
+		<table class="span-table">
+			<tr class="span-table-row">
+				<td class="table-row">Mass</td>
+				<td class="table-data">5.683 x 10<sup>26</sup> kg</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Orbit Period</td>
+				<td class="table-data">29.4 years (Sun)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Radius</td>
+				<td class="table-data">58232 km (0.084 <span><a href="keywords.html">&#42;R<sub>&#9737;</sub></span>)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Gravity</td>
+				<td class="table-data">10.44 m/s<sup>2</sup></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Temperature</td>
+				<td class="table-data">95.15 <span><a href="keywords.html">&#42;K</a></span></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Moon(s)</td>
+				<td class="table-data">Titan, Enceladus, Mimas, Dione &amp; <a href="https://www.google.se/search?q=saturn+moons" style="color: cyan;">58 others.</a></td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>

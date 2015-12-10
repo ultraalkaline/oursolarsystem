@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Uranus</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="uranus.css">
+	<link rel="shortcut icon" href="../../favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+	</script>
+	<script>	
+		function changeSize() {
+			var celestialBody = document.getElementsByClassName("celestialBody");
+			$(celestialBody).css("width", "2em");
+			$(celestialBody).css("height", "2em");
+		}
+	</script>
+	<script>
+		function fadeIn() {
+			var rings = document.getElementById('uranus-rings');
+			$(rings).fadeIn(4000);
+		}
+	</script>
+	<script>
+		function backgroundChange() {
+			var $root = $('html, body');
+			$root.css({'background-color': '#121A1F'});
+		}
+	</script>
+	<script>
+		function fadeTitle() {
+			$('.title').hide().fadeIn(2000);
+		}
+	</script>
+	<script>
+		window.onload=function() {
+			backgroundChange();
+			fadeTitle();
+			changeSize();
+			fadeIn();
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+					&& location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						$target = $target.length && $target
+						|| $('[name=' + this.hash.slice(1) +']');
+					if ($target.length) {
+						var targetOffset = $target.offset().top;
+						$('html, body')
+						.animate({scrollTop: targetOffset}, 1000);
+					return false;
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="links">
+		<a class="table" href="#table-title"><img src="..\..\images\table.png" alt="Table of Facts"/></a>
+		<a class="uranus" href="#uranus-circle"><img src="..\..\images\planet.png" alt="Back to Top"/></a>
+	</div>
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="../solar_system.html">
+			<img class="selected" src="..\..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="../about.html">
+			<img src="..\..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="../keywords.html">
+			<img src="..\..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="../more.html">
+			<img src="..\..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	
+	<div id="content">
+	
+	<div id="uranus-container">
+		<div id="uranus-circle" class="celestialBody" onload="changeSize()">
+		</div>
+		<div id="uranus-rings" onload="fadeIn()">
+		</div>
+	</div>
+	<div id="moons-container">
+		<div id="oberon-orbit">
+			<div id="oberon-circle">
+			</div>
+		</div>
+		<div id="titania-orbit">
+			<div id="titania-circle">
+			</div>
+		</div>
+		<div id="miranda-orbit">
+			<div id="miranda-circle">
+			</div>
+		</div>
+	</div>
+	<h1 id="uranus-title" class="title"><a href="http://en.wikipedia.org/wiki/Uranus">Uranus</a></h1>
+	<div id="uranus-info">
+		<img id="uranus-symbol" src="..\..\images\symbols\uranus_symbol.png" alt="Uranus Symbol"/>
+		<h2 id="uranus-description">
+			A gas &amp; ice giant with no solid surface. The reason the planet appears blue 
+			is because of its atmosphere containing methane, which absorbs red light and allows blue and green hues to be reflected,
+			giving the planet a beautiful greenish blue color.
+		</h2>
+	</div>
+	
+	<h3 id="table-title">Table of Facts</h3>
+	<div id="uranus-table" align="center">
+		<table class="span-table">
+			<tr class="span-table-row">
+				<td class="table-row">Mass</td>
+				<td class="table-data">8.681 x 10<sup>25</sup> kg</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Orbit Period</td>
+				<td class="table-data">84 years (Sun)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Radius</td>
+				<td class="table-data">25362 km (0.036 R <span><a href="keywords.html">&#42;R<sub>&#9737;</sub></span>)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Gravity</td>
+				<td class="table-data">8.69 m/s<sup>2</sup></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Temperature</td>
+				<td class="table-data">55.15 <span><a href="keywords.html">&#42;K</a></span> to 120.15 <span><a href="keywords.html">&#42;K</a></span> (troposphere)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Moon(s)</td>
+				<td class="table-data">Miranda, Titania, Oberon, Ariel &amp; <a href="https://www.google.se/search?q=uranus+moons" style="color: cyan;">23 others.</a></td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>

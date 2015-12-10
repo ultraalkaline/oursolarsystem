@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Pluto</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="pluto.css">
+	<link rel="shortcut icon" href="../../favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+	</script>
+	<script>	
+		function changeSize() {
+			var celestialBody = document.getElementsByClassName("celestialBody");
+			$(celestialBody).css("width", "1.7em");
+			$(celestialBody).css("height", "1.7em");
+		}
+	</script>
+	<script>
+		function fadeIn() {
+			var rings = document.getElementById('pluto-rings');
+			$(rings).fadeIn(4000);
+		}
+	</script>
+	<script>
+		function backgroundChange() {
+			var $root = $('html, body');
+			$root.css({'background-color': '#121A1F'});
+		}
+	</script>
+	<script>
+		function fadeTitle() {
+			$('.title').hide().fadeIn(2000);
+		}
+	</script>
+	<script>
+		window.onload=function() {
+			backgroundChange();
+			fadeTitle();
+			changeSize();
+			fadeIn();
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+					&& location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						$target = $target.length && $target
+						|| $('[name=' + this.hash.slice(1) +']');
+					if ($target.length) {
+						var targetOffset = $target.offset().top;
+						$('html, body')
+						.animate({scrollTop: targetOffset}, 1000);
+					return false;
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="links">
+		<a class="table" href="#table-title"><img src="..\..\images\table.png" alt="Table of Facts"/></a>
+		<a class="pluto" href="#pluto-circle"><img src="..\..\images\planet.png" alt="Back to Top"/></a>
+	</div>
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="../solar_system.html">
+			<img class="selected" src="..\..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="../about.html">
+			<img src="..\..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="../keywords.html">
+			<img src="..\..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="../more.html">
+			<img src="..\..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	
+	<div id="content">
+	
+	<div id="pluto-container">
+		<div id="pluto-circle" class="celestialBody">
+		</div>
+	</div>
+	<div id="moons-container">
+		<div id="hydra-orbit">
+			<div id="hydra-circle">
+			</div>
+		</div>
+		<div id="nix-orbit">
+			<div id="nix-circle">
+			</div>
+		</div>
+		<div id="charon-orbit">
+			<div id="charon-circle">
+			</div>
+		</div>
+	</div>
+	<h1 id="pluto-title" class="title"><a href="http://en.wikipedia.org/wiki/Pluto">Pluto</a></h1>
+	<div id="pluto-info">
+		<img id="pluto-symbol" src="..\..\images\symbols\pluto_symbol.png" alt="Pluto Symbol"/>
+		<h2 id="pluto-description">
+			Pluto was once considered the 9th planet in the solar system, before
+			it was reclassified to a dwarf planet when the International Astronomical Union described the definition of a planet. This dwarf planet is 
+			so small, that it has 66% of the diameter of the Earth's moon and 18% of its mass.
+		</h2>
+	</div>
+	<p id="update-07-14-2015"><em>*to be updated 07/14-2015</em></p>
+	<h3 id="table-title">Table of Facts</h3>
+	<div id="pluto-table" align="center">
+		<table class="span-table">
+			<tr class="span-table-row">
+				<td class="table-row">Mass</td>
+				<td class="table-data">1.309 x 10<sup>22</sup> kg</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Orbit Period</td>
+				<td class="table-data">247.68 years (Sun)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Radius</td>
+				<td class="table-data">1147 km (0.002 <span><a href="keywords.html">&#42;R<sub>&#9737;</sub></span>)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Gravity</td>
+				<td class="table-data">0.658 m/s<sup>2</sup></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Temperature</td>
+				<td class="table-data">33 <span><a href="keywords.html">&#42;K</a></span> to 55 <span><a href="keywords.html">&#42;K</a></span></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Moon(s)</td>
+				<td class="table-data">Hydra, Nix, Charon &amp;  <a href="https://www.google.se/search?q=pluto+moons" style="color: cyan;">2 others.</a></td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>

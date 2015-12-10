@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Earth</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="earth.css">
+	<link rel="shortcut icon" href="../../favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+	</script>
+	<script>	
+		function changeSize() {
+			var celestialBody = document.getElementsByClassName("celestialBody");
+			$(celestialBody).css("width", "5em");
+			$(celestialBody).css("height", "5em");
+		}
+	</script>
+	<script>
+		function backgroundChange() {
+			$('body, html').css({'background-color': '#121A1F'});
+		}
+	</script>
+	<script>
+		function fadeTitle() {
+			$('.title').hide().fadeIn(2000);
+		}
+	</script>
+	<script>
+		window.onload=function() {
+			backgroundChange();
+			fadeTitle();
+			changeSize();
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+					&& location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						$target = $target.length && $target
+						|| $('[name=' + this.hash.slice(1) +']');
+					if ($target.length) {
+						var targetOffset = $target.offset().top;
+						$('html, body')
+						.animate({scrollTop: targetOffset}, 1000);
+					return false;
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="links">
+		<a class="table" href="#table-title"><img src="..\..\images\table.png" alt="Table of Facts"/></a>
+		<a class="earth" href="#earth-circle"><img src="..\..\images\planet.png" alt="Back to Top"/></a>
+	</div>
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="../solar_system.html">
+			<img class="selected" src="..\..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="../about.html">
+			<img src="..\..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="../keywords.html">
+			<img src="..\..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="../more.html">
+			<img src="..\..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	
+	<div id="content">
+	
+	<div id="earth-container">
+		<div id="earth-circle" class="celestialBody" onload="changeSize()">
+		</div>
+	</div>
+	<div id="moon-container">
+		<div id="moon-orbit">
+			<div id="moon-circle">
+			</div>
+		</div>
+		<div id="moon-orbit-style">
+		</div>
+	<h1 id="earth-title" class="title"><a href="http://en.wikipedia.org/wiki/Earth">Earth</a></h1>
+	<div id="earth-info">
+		<img id="earth-symbol" src="..\..\images\symbols\earth_symbol.png" alt="Earth Symbol"/>
+		<h2 id="earth-description">
+			Our only home. The Earth is quite unique in the way of it being the only planet in the solar system 
+			that supports life and the only one to have liquid water on its surface. It's also the only planet in the solar system 
+			whose name doesn't derive from Greek/Roman mythology.
+		</h2>
+		
+	</div>
+	
+	<h3 id="table-title">Table of Facts</h3>
+	<div id="earth-table" align="center">
+		<table class="span-table">
+			<tr class="span-table-row">
+				<td class="table-row">Mass</td>
+				<td class="table-data">5.974 x 10<sup>24</sup> kg</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Orbit Period</td>
+				<td class="table-data">365 days (Sun)</td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Radius</td>
+				<td class="table-data">6371 km (0.0092 <span><a href="keywords.html">&#42;R<sub>&#9737;</sub></span>)</td>
+			</tr>
+			<tr class="span-table-row">
+			<td class="table-row">Gravity</td>
+				<td class="table-data">9.807 m/s<sup>2</sup></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Temperature</td>
+				<td class="table-data">289.15<span>&#42;K</span></td>
+			</tr>
+			<tr class="span-table-row">
+				<td class="table-row">Moon(s)</td>
+				<td class="table-data">The Moon</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</body>
+</html>

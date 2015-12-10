@@ -1,0 +1,813 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>Our Solar System</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,System,Astronomy">
+	<meta name="description" content="Our Solar System">
+    <link rel="stylesheet" href="solar_style.css" type="text/css"/>
+    <link rel="stylesheet" href="tooltips/tooltip.css" type="text/css"/> 
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<!-- Implementation of jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- Navigation Bar Tooltips -->
+	<script src="tooltips/tooltip.js"></script>
+	<!-- Page-loading Effect -->
+	<script>
+		window.onload=function(){
+			$('body, html').css({'background-color': '#121A1F'});
+		}
+	</script>
+	<!-- Anchor Link Effect -->
+	<script>
+		$(document).ready(function(){
+			$('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+					&& location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						$target = $target.length && $target
+						|| $('[name=' + this.hash.slice(1) +']');
+					if ($target.length) {
+						var targetOffset = $target.offset().top;
+						$('html, body')
+						.animate({scrollTop: targetOffset}, 500);
+					return false;
+					}
+				}
+			});
+		});
+	</script>
+	<!-- Tip #1 Hide Effect -->
+	<script>
+		setTimeout(function() {
+			$('#tip').fadeOut('slow');
+		}, 5000);
+	</script>
+	<!-- Tip #2 Hide Effect -->
+	<script>
+		setTimeout(function() {
+			$('#under-hood').fadeOut('slow');
+		}, 5000);
+	</script>
+	<!-- Detect Mobile Device -->
+	<script>
+		var isMobile = {
+			Android: function() {
+				return navigator.userAgent.match(/Android/i);
+			},
+			BlackBerry: function() {
+				return navigator.userAgent.match(/BlackBerry/i);
+			},
+			iOS: function() {
+				return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+			},
+			Opera: function() {
+				return navigator.userAgent.match(/Opera Mini/i);
+			},
+			Windows: function() {
+				return navigator.userAgent.match(/IEMobile/i);
+			},
+			any: function() {
+				return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+			}
+		};
+		if (isMobile.any()) 
+		{
+			if (confirm("It seems like you're on a Mobile Device. Do you want to head to the mobile version of the website?"))
+			{
+				window.location = "http://oursolarsystem.co/mobile/solar_system";
+			}
+			else 
+			{
+				//Do nothing.
+			}
+		}
+		else 
+		{
+			//Do nothing.
+		}
+	</script>
+	<!-- Planets FadeIn Effect -->
+	<script>
+		setTimeout(function() {
+			var orbit = document.getElementsByClassName("orbit-style");
+			var planet = document.getElementsByClassName("solar-body");
+			$(orbit).each(function(i) {
+				$(this).delay((i++) * 200).fadeTo(400, 1); 
+			}),
+			$(planet).each(function(i) {
+				$(this).delay((i++) * 200).fadeTo(400, 1);
+			}),
+			$(mobile).delay(200).fadeTo(400, 1);
+		}, 100);
+	</script>
+	<!--Asteroid Belt Hover Effect -->
+	<script>
+		$('#earth-text-style').hover(function() {
+			$('#').css("background", "yellow");
+		});
+	</script>
+</head>
+
+<body>
+<div id="wrapper">
+<div id="content">	
+	<div id='title'>
+		<h1><a id='title-link' href='http://en.wikipedia.org/wiki/Solar_System'>Our Solar System</a></h1>
+	</div>
+	<div id='second-title'>
+		<h4>An experiment with CSS animations &amp; -webkit.</h4>
+	</div>
+		<ul id="solar-list">
+			<!-- Sun Link -->
+			<div id='sun-text-style' class="solar-links">
+				<li id='sun-text'><a id='sun-link' href="http://en.wikipedia.org/wiki/Sun">Sun<span class="solar-span" id="sun-tooltip">
+				<div id='sun-container'>
+					<img id="sun-symbol" src="images/symbols/sun_symbol.png" alt="Sun Symbol"/>
+					<p class="sun-title">The Sun</p>
+					<p id="sun-info" class="table-info">The centerpiece of our solar system. Did you know that the Sun actually consists mostly of hydrogen and helium?				
+					The heat and light we recieve actually comes from the nuclear fusion that occurs inside the Sun, which releases huge amounts of energy. Its mass is so huge, 
+					that it makes up 99.8% of our entire solar system's mass.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">1.989 x 10<sup>30</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">225-250 mil years (<em style="color: #f96767; font-style: normal;">&#42;Sgr A*</em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">6.955 x 10<sup>5</sup> km (1 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">274.0 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">5778 <em style="color: #f96767; font-style: normal;">&#42;K</em></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">None</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='sun-2' class="orbit-style sun ">
+			</div>
+			<!-- Mercury Link -->
+			<div id='mercury-text-style' class="solar-links">
+				<li id='mercury-text'><a id='mercury-link' href='http://en.wikipedia.org/wiki/Mercury_(planet)'>Mercury<span class="solar-span" id="mercury-tooltip">
+				<div id='mercury-container'>
+					<img id="mercury-symbol" src="images/symbols/mercury_symbol.png" alt="Mercury Symbol"/>
+					<p class="mercury-title">Mercury</p>
+					<p id="mercury-info" class="table-info">Being the closest planet to the Sun, its temperature can reach 430&deg;C during the day and -173.15&deg;C during the night.
+					These long ranges occur because of its thin atmosphere, being essentially a vacuum because of its low gravity (38% of the Earth's) making it possible for solar waves 
+					to blow away whatever atmosphere it has left onto outer space.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">3.3022 x 10<sup>23</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">88 days (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">2400 km (0.0035 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">3.7 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">Day: 700 <em style="color: #f96767; font-style: normal;">&#42;K</em> Night: 100 <em style="color: #f96767; font-style: normal;">&#42;K</em></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">None</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='mercury-orbit-style' class="orbit-style">
+			</div>
+			<!-- Venus Link -->
+			<div id='venus-text-style' class="solar-links">
+				<li id='venus-text'><a id='venus-link' href='http://en.wikipedia.org/wiki/Venus'>Venus<span class="solar-span" id="venus-tooltip">
+				<div id='venus-container'>
+					<img id="venus-symbol" src="images/symbols/venus_symbol.png" alt="Venus Symbol"/>
+					<p class="venus-title">Venus</p>
+					<p id="venus-info" class="table-info">Named after the Roman goddess of love and beauty, Venus is the second brightest object in the night sky after the moon. 
+					It's considered as Earth's sister planet because of their similarities when it comes to mass and radius.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">4.867 x 10<sup>24</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">225 days (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">6052 km (0.0087 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">8.87 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">738.15 <em style="color: #f96767; font-style: normal;">&#42;K</em></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">None</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='venus-orbit-style' class="orbit-style">
+			</div>
+			<!-- Earth Link -->
+			<div id='earth-text-style' class="solar-links">
+				<li id='earth-text'><a id='earth-link' href='http://en.wikipedia.org/wiki/Earth'>Earth<span class="solar-span" id="earth-tooltip">
+				<div id='earth-container'>
+					<img id="earth-symbol" src="images/symbols/earth_symbol.png" alt="Earth Symbol"/>
+					<p class="earth-title">Earth</p>
+					<p id="earth-info" class="table-info">Our only home. The Earth is quite unique in the way of it being the only planet in the solar system 
+					that supports life and the only one to have liquid water on its surface. It's also the only planet in the solar system 
+					whose name doesn't derive from Greek/Roman mythology.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">5.972 x 10<sup>24</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">365 days (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">6371 km (0.0092 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">9.807 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">288.15 <em style="color: #f96767; font-style: normal;">&#42;K</em> (average)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">The Moon</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='earth-orbit-style' class="orbit-style ">
+			</div>
+			<!-- Mars Link -->
+			<div id='mars-text-style' class="solar-links">
+				<li id='mars-text'><a id='mars-link' href='http://en.wikipedia.org/wiki/Mars'>Mars<span class="solar-span" id="mars-tooltip">
+				<div id='mars-container'>
+					<img id="mars-symbol" src="images/symbols/mars_symbol.png" alt="Mars Symbol"/>
+					<p class="mars-title">Mars</p>
+					<p id="mars-info" class="table-info">The Roman God of War (also called Ares by the Greeks) is the name given to the fourth planet from 
+					the Sun because of its bloody red color. Did you know that Mars has the largest volcanoes in the solar system, 
+					with its largest one (Olympus Mons) being wide enough to cover the entire state of New Mexico?</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">6.4185 x 10<sup>23</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">687 days (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">3390 km (0.0049 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">3.711 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">186.15 <em style="color: #f96767; font-style: normal;">&#42;K</em> to 268.15 <em style="color: #f96767; font-style: normal;">&#42;K</em></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">Phobos &amp; Deimos</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='mars-orbit-style' class="orbit-style ">
+			</div>
+			<!-- Asteroid Belt Link -->
+			<div id='asteroid-belt-text-style' onmouseover="asteroid_belt_hover()" class="solar-links">
+				<li id='asteroid-belt-text'><a id='asteroid-belt-link' href='http://en.wikipedia.org/wiki/Asteroid_belt'>The Asteroid Belt<span class="solar-span" id="asteroid-belt-tooltip">
+				<div id='asteroid-belt-container'>
+					<img id="asteroid-belt-symbol" src="images/symbols/asteroid_symbol.png" alt="Asteroid Belt Symbol"/>
+					<p class="asteroid-belt-title">The Asteroid Belt</p>
+					<p id="asteroid-belt-info" class="table-info">The Asteroid Belt is a region between Jupiter's and Mars's orbital areas.
+					The four largest objects in this belt are Ceres, Vesta, Pallas, and Hygiea. Their masses combined makes up half of the whole belt's total mass.
+					The belt is located 2.2 to 3.2 &#42;(Au) from the sun.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">2.8 x 10<sup>21</sup> kg to 3.2 x 10<sup>21</sup> kg (total)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">(Sun, Jupiter &amp; Mars)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">375000 km (combined) (0.54 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">&#42;varies&#42; m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">&#42;varies&#42; <em style="color: #f96767; font-style: normal;">&#42;K</em></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">wat</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<!-- Jupiter Link -->
+			<div id='jupiter-text-style' class="solar-links">
+				<li id='jupiter-text'><a id='jupiter-link' href='http://en.wikipedia.org/wiki/Jupiter'>Jupiter<span class="solar-span" id="jupiter-tooltip">
+				<div id='jupiter-container'>
+					<img id="jupiter-symbol" src="images/symbols/jupiter_symbol.png" alt="Jupiter Symbol"/>
+					<p class="jupiter-title">Jupiter</p>
+					<p id="jupiter-info" class="table-info">Named after the God of Gods in Roman Mythology, Jupiter is the largest planet in 
+					the solar system. In fact, it is so large, that it has 2.5 times the mass of the all of the other planets combined, not to mention its 67 moons.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">1.898 x 10<sup>27</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">11.8 years (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">69911 km (0.1 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">24.79 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">24273.2 <em style="color: #f96767; font-style: normal;">&#42;K</em> (core) 128.15 <em style="color: #f96767; font-style: normal;">&#42;K</em> (clouds)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">Io, Europa, Ganymede, Callisto &amp; 63 others.</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='jupiter-orbit-style' class="orbit-style ">
+			</div>
+			<!-- Saturn Link -->
+			<div id='saturn-text-style' class="solar-links">
+				<li id='saturn-text'><a id='saturn-link' href='http://en.wikipedia.org/wiki/Saturn'>Saturn<span class="solar-span" id="saturn-tooltip">
+				<div id='saturn-container'>
+					<img id="saturn-symbol" src="images/symbols/saturn_symbol.png" alt="Saturn Symbol"/>
+					<p class="saturn-title">Saturn</p>
+					<p id="saturn-info" class="table-info">Saturn was the most distant of the five planets known to the ancients. 
+					Being similar to Jupiter, Saturn is mostly made of hydrogen and helium. Though its rings are mostly made of chunks of ice 
+					and small amounts of carbonaceous dust. The rings are very stretchy (very = 120700 km) but are amazingly thin (amazingly = 20 m).</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">5.683 x 10<sup>26</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">29.4 years (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">58232 km (0.084 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">10.44 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">95.15 <em style="color: #f96767; font-style: normal;">&#42;K</em></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">Titan, Enceladus, Mimas, Dione &amp; 58 others.</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='saturn-orbit-style' class="orbit-style ">
+			</div>
+			<!-- Uranus Link -->
+			<div id='uranus-text-style' class="solar-links">
+				<li id='uranus-text'><a id='uranus-link' href='http://en.wikipedia.org/wiki/Uranus'>Uranus<span class="solar-span" id="uranus-tooltip">
+				<div id='uranus-container'>
+					<img id="uranus-symbol" src="images/symbols/uranus_symbol.png" alt="Uranus Symbol"/>
+					<p class="uranus-title">Uranus</p>
+					<p id="uranus-info" class="uranus-info">A gas &amp; ice giant with no solid surface. The reason the planet appears blue 
+					is because of its atmosphere containing methane, which absorbs red light and allows blue and green hues to be reflected,
+					giving the planet a beautiful greenish blue color.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">8.681 x 10<sup>25</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">84 years (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">25362 km (0.036 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">8.69 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">55.15 <em style="color: #f96767; font-style: normal;">&#42;K</em> to 120.15 <em style="color: #f96767; font-style: normal;">&#42;K</em> (troposphere)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">Miranda, Titania, Oberon, Ariel &amp; 23 others.</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='uranus-orbit-style' class="orbit-style ">
+			</div>
+			<!-- Neptune Link -->
+			<div id='neptune-text-style' class="solar-links">
+				<li id='neptune-text'><a id='neptune-link' href='http://en.wikipedia.org/wiki/Neptune'>Neptune<span class="solar-span" id="neptune-tooltip">
+				<div id='neptune-container'>
+					<img id="neptune-symbol" src="images/symbols/neptune_symbol.png" alt="Neptune Symbol"/>
+					<p class="neptune-title">Neptune</p>
+					<p id="neptune-info" class="neptune-info">This gas giant is the most dense one of them all and is believed to have formed
+					much closer to the Sun in early solar system history before migrating to its current position. The Great Dark Spot can be 
+					found here, which consists of anticyclonic storms with a tremendous speed of 2400 km/h.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">1.024 x 10<sup>26</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">164.8 years (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">24622 km (0.035 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">11.15 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">72.15 <em style="color: #f96767; font-style: normal;">&#42;K</em> (troposphere)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">Triton, Nereid, Despina, Thalassa &amp; 10 others.</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='neptune-orbit-style' class="orbit-style ">
+			</div>
+			<!-- Pluto Link -->
+			<div id='pluto-text-style' class="solar-links">
+				<li id='pluto-text'><a id='pluto-link' href='http://en.wikipedia.org/wiki/Pluto'>Pluto<span class="solar-span" id="pluto-tooltip">
+				<div id='pluto-container'>
+					<img id="pluto-symbol" src="images/symbols/pluto_symbol.png" alt="Pluto Symbol"/>
+					<p class="pluto-title">Pluto</p>
+					<p id="pluto-info" class="pluto-info">Pluto was once considered the 9th planet in the solar system, before
+					it was reclassified to a dwarf planet when the International Astronomical Union described the definition of a planet. This dwarf planet is 
+					so small, that it has 66% of the diameter of the Earth's moon and 18% of its mass.</p>
+					<table class="span-table">
+						<tr class="span-table-row">
+							<td class="table-row">Mass</td>
+							<td class="table-data">1.309 x 10<sup>22</sup> kg</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Orbit Period</td>
+							<td class="table-data">247.68 years (Sun)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Radius</td>
+							<td class="table-data">1147 km (0.002 <em style="color: #f96767; font-style: normal;">&#42;R<sub>&#9737;</sub></em>)</td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Gravity</td>
+							<td class="table-data">0.658 m/s<sup>2</sup></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Temperature</td>
+							<td class="table-data">33 <em style="color: #f96767; font-style: normal;">&#42;K</em> to 55 <em style="color: #f96767; font-style: normal;">&#42;K</em></td>
+						</tr>
+						<tr class="span-table-row">
+							<td class="table-row">Moon(s)</td>
+							<td class="table-data">Hydra, Nix, Charon &amp; 2 others.</td>
+						</tr>
+					</table>
+				</div>
+				</span></a></li>
+			</div>
+			<div id='pluto-orbit-style' class="orbit-style ">
+			</div>
+		</ul>
+
+	<div id='solar-system'>	
+		<!-- The Asteroid Belt -->
+		<div id='asteroid-belt-orbit'>
+			<img id="asteroid-belt" class="solar-body" src="images/asteroid_belt.png" alt="Asteroid Belt">
+		</div>
+		<!-- The Sun -->
+		<div id="sun" >
+		</div>
+		<!-- Mercury -->
+		<div id ='mercury-orbit' >
+			<div id='mercury' class="solar-body">
+			</div>	
+		</div>
+		<!-- Venus -->
+		<div id='venus-orbit'>
+			<div id='venus' class="solar-body">
+			</div>
+		</div>
+		<!-- Earth -->
+		<div id='earth-orbit' >
+			<div id='moon-orbit'>
+				<div id='moon' class="solar-body">
+				</div>
+			</div>
+			<div id='earth' class="solar-body">
+			</div>
+		</div>
+		<!-- Mars -->
+		<div id='mars-orbit' >
+			<div id='mars-moons'>
+				<div id='phobos-orbit'>
+					<div id='phobos'>
+					</div>
+				</div>
+				<div id='deimos-orbit'>
+					<div id='deimos'>
+					</div>
+				</div>
+			</div>
+			<div id='mars' class="solar-body">
+			</div>
+		</div>
+		<!-- Jupiter -->
+		<div id='jupiter-moons-orbit'>
+			<div id='jupiter-moons'>
+				<div id='ganymede-orbit'>
+					<div id='ganymede'>
+					</div>
+				</div>
+				<div id='europa-orbit'>
+					<div id='europa'>
+					</div>
+				</div>
+				<div id='io-orbit'>
+					<div id='io'>
+					</div>
+				</div>
+				<div id='callisto-orbit'>
+					<div id='callisto'>
+					</div>
+				</div>
+			</div>
+			<div id='jupiter-orbit' >
+				<div id='jupiter' class="solar-body">
+				</div>
+			</div>
+		</div>
+		<!-- Saturn -->
+		<div id='saturn-orbit' >
+			<div id='saturn' class="solar-body" >
+				<div id='saturn-ring'  class="solar-body">
+				</div>
+			</div>
+		</div>
+		<!-- Uranus -->
+		<div id='uranus-orbit' >
+			<div id='uranus'  class="solar-body">
+				<div id='uranus-ring' class="solar-body" >
+				</div>
+			</div>
+		</div>
+		<!-- Neptune -->
+		<div id='neptune-orbit' >
+			<div id='neptune'  class="solar-body">
+			</div>
+		</div>
+		<!-- Pluto -->
+		<div id='pluto-orbit' >
+			<div id='pluto'  class="solar-body">
+			</div>
+		</div>
+	<!-- End of div = solar_system -->
+	</div>
+
+<!-- End of div = content -->
+</div>
+	<!-- Extra Links -->
+	<div id="links">
+		<a class="about" href="#about-head" onmouseover="tooltip.pop(this, '<h3>About this page.</h3>')"><img src="images\about.png" alt="About"></img></a>
+		<a class="keywords" href="#keywords-head" onmouseover="tooltip.pop(this, '<h3>Description on things marked with an asterisk (&#42;).</h3>')"><img src="images\keywords.png" alt="Keywords"></img></a>
+		<a class="more" href="#more-head" onmouseover="tooltip.pop(this, '<h3>A deeper overview of Our Solar System.</h3>')"><img src="images\more.png" alt="More..."></img></a>
+		<a class="solarsystem" href="#title" onmouseover="tooltip.pop(this, '<h3>Back to the top</h3>')"><img src="images\planet.png" alt="Solar System"></img></a>
+		<a class="mobile" href="mobile/solar_system" onmouseover="tooltip.pop(this, '<h3>Visit the Mobile version.</h3>')"><img src="images/smartphone.png" alt="Mobile Version" style="position: absolute; top: 1.5em; right: 1.5em; width: 3.783em; height: 5em; background: #005E86; border-radius: 10px; padding: 0.4em;"></img></a>
+	</div>
+	<!-- Extra Links' Text -->
+	<div id="about">
+		<div id="about-head" class="link-head" align="center">
+			<p><strong>About.</strong></p>
+		</div>
+		<div id="about-text">
+			<p>This page was created as a voluntary project to include some of the basics of CSS, HTML and the tiniest bit of JavaScript & the jQuery library.
+			<br>I decided to make the page about the solar system because of my interest in Astronomy and for the sake of teaching others about our own neighborhood 
+			of celestial bodies.
+			<br>I chose this type of project not only to express my creativity but to show others that it's okay to choose your own type of project, as long as you include
+			everything that you've learned <em style="color: #f05825;">(tip: including extra things will always give you better grades)</em>.
+			<br><br>It all started with two circles; one big and yellow and the other one being little and blue, which were included in a project that <a href="http://codecademy.com/">
+			CodeCademy</a> (a site I highly recommend)
+			suggested for new users. The idea was to create a very simple version of the solar system by making the blue circle orbit around the yellow one and at the same time
+			having a grey circle orbiting around the blue one, which would represent the orbit of the Moon around the Earth and the Earth around the Sun.
+			<center><br><br>The earliest version of Our Solar System:</center></p>
+			<center><img id="firstversion" src="images\inthebeginning.png" alt="In the beginning"></img></center>
+			<br><br><br><p>Which was backed up with the HTML and CSS code:</p>
+			<br><br><p class="pre-title">index.html</p>
+			<div class="pre-background">
+			<pre>
+<span style="color: orange; margin-left: 10%;">&lt;html></span>
+	<span style="color: orange; margin-left: 10%;">&lt;head></span>
+		<span style="color: orange; margin-left: 10%;">&lt;link</span><span style="color: #ff7575;"> rel</span>= <span style="color: yellow;">"stylesheet"</span><span style="color: #ff7575;"> href</span>= <span style="color: yellow;">"style.css"</span><span style="color: orange;">/></span>
+	<span style="color: orange; margin-left: 10%;">&lt;/head></span>
+   
+	<span style="color: orange; margin-left: 10%;">&lt;body></span>
+		<span style="color: green; margin-left: 10%;">&lt;!-- Right below is an image of the sun --></span>
+		<span style="color: orange; margin-left: 10%;">&lt;img</span> <span style="color: #ff7575;">id</span>= <span style="color: yellow;">"sun"</span> <span style="color: #ff7575;">src</span>= <span style="color: yellow;">"http://goo.gl/PmbqZa"</span><span style="color: orange;">></span>
+		<span style="color: orange; margin-left: 10%;">&lt;img</span> <span style="color: #ff7575;">id</span>= <span style="color: yellow;">"earth"</span> <span style="color: #ff7575;">src</span>= <span style="color: yellow;">"http://goo.gl/41IWnf"</span><span style="color: orange;">></span>
+		<span style="color: green; margin-left: 10%;">&lt;!-- Insert the 'earth' on the next line --></span>
+	<span style="color: orange; margin-left: 10%;">&lt;/body></span>
+<span style="color: orange; margin-left: 10%;">&lt;/html></span>
+			</pre>
+			</div>
+			<br><br><p class="pre-title">style.css</p>
+			<div class="pre-background">
+			<pre>
+		<span style="color: #12b1ff;">html, body</span> <span style="color: orange;">{</span>
+			<span style="color: green;">/&#42; The universe takes up all available space &#42;/</span>
+			<span style="color: #dbbc71;">width</span>: 100%;
+			<span style="color: #dbbc71;">height</span>: 100%;
+					
+			<span style="color: green;">/&#42; The universe is black &#42;/</span>
+			<span style="color: #dbbc71;">background-color</span>: black;
+		<span style="color: orange;">}</span>
+
+		<span style="color: #ffdd12;">#sun</span> <span style="color: orange;">{</span>
+			<span style="color: #dbbc71;">position</span>: absolute;
+			<span style="color: green;">/&#42; Positions the top-left corner of the image to be &#42;
+			/&#42; in the middle of the box &#42;/</span>
+			<span style="color: #dbbc71;">top</span>: 50%;
+			<span style="color: #dbbc71;">left</span>: 50%;
+					
+			<span style="color: green;">/&#42; Play with these numbers to see what it does &#42;/</span>
+			<span style="color: #dbbc71;">height</span>: 200px;
+			<span style="color: #dbbc71;">width</span>: 200px;
+			<span style="color: #dbbc71;">margin-top</span>: -100px; 
+			<span style="color: #dbbc71;">margin-left</span>: -100px;
+		<span style="color: orange;">}</span>
+
+		<span style="color: #ffdd12;">#earth</span> <span style="color: orange;">{</span>
+			<span style="color: green;">/&#42; Style your earth &#42;/</span>
+		<span style="color: orange;">}</span>
+
+		<span style="color: #ffdd12;">#earth-orbit</span> <span style="color: orange;">{</span>
+			<span style="color: green;">/&#42; For Section #2 &#42;/</span>
+		<span style="color: orange;">}</span>
+			</pre>
+			</div>
+		</div>
+	</div>
+	<div id="keywords">
+		<div id="keywords-head" class="link-head">
+			<p><strong>&#42;.</strong></p>
+		</div>
+		<p>A table of definitions and usage of thingies that are marked with an asterisk (&#42;).</p>
+		<table id="keywords-table" align="center">
+			<tr>
+				<th>Keyword</th>
+				<th style="width: 150px" align="center">Abbreviation for</th>
+				<th>Description</th>
+				<th>Use</th>
+			</tr>
+			<tr>
+				<td align="center">Sgr A&#42;</td>
+				<td align="center"><a href="http://en.wikipedia.org/wiki/Sagittarius_A&#42;">Sagittarius A&#42;</a></td>
+				<td>A region in the middle of the Milky Way 
+				(our galaxy). It is known as a complex radio source
+				as it emits strong radio waves (Infrared, X-ray and Gamma-ray)
+				in outer space. It's believed that a supermassive blackhole lives there.
+				</td>
+				<td>Celestial bodies that orbit the center of the Milky Way</td>
+			</tr>
+			<tr>
+				<td align="center">R<sub>&#9737;</sub></td>
+				<td align="center"><a href="http://en.wikipedia.org/wiki/Solar_radius">Solar Radius</a></td>
+				<td>The solar radius is self-explanatory as its name reveals everything 
+				it's about. R<sub>&#9737;</sub> is a unit of length and 
+				its value is approximately 695 500 km (6.955 x 10<sup>8</sup> metres).
+				</td>
+				<td>Expressing the size of stars</td>
+			</tr>
+			<tr>
+				<td align="center">Au</td>
+				<td align="center"><a href="http://en.wikipedia.org/wiki/Astronomical_unit"><span style="color:#6fa2c1">A</span>stronomical <span style="color:#6fa2c1">U</span>nit</a></td>
+				<td>A unit of length in which the exact value is 149 597 870 700 metres and 
+				is the mean distance between the Earth and the Sun.
+				</td>
+				<td>Measurement of long distances in outer space</td>
+			</tr>
+			<tr>
+				<td align="center">K</td>
+				<td align="center"><a href="http://en.wikipedia.org/wiki/Kelvin">Kelvin</a></td>
+				<td>An absolute thermodynamic temperature scale, where its minimum value (value of 0), is the temperature where all thermal
+				motion ceases and where every atom is still. Unlike the Celsius and the Fahrenheit temperature scales, no negative
+				values are present. <br><br><em>Formulae:</em><br> [°C] = [K] − 273.15<br> [°F] = [K] × <sup>9</sup>&frasl;<sub>5</sub> − 459.67
+				</td>
+				<td>Measurement of temperatures in outer space. </td>
+			</tr>
+		</table>
+	</div>
+	<div id="more">
+		<div id="more-head" class="link-head">
+			<p><strong>More.</strong></p>
+		</div>
+		<div id="more-text">If you're willing to dig deeper into the anatomy of our solar system and want to find out more about space in general, then definitely check out the material below which includes a video 
+		 from <a href="https://www.youtube.com/user/MacManLtd">MacManLTD</a> who precisely goes over the most known celestial bodies that orbit around the Sun. I also included some 
+		 articles &amp; links that you might find interesting, especially the Dark Matter and Dark Energy ones.</div>
+		<center><iframe width="889" height="500" src="https://www.youtube.com/embed/QfOF0bRBFJ4?hd=1&iv_load_policy=3&controls=2" frameborder="0" allowfullscreen seamless>
+		</iframe></center>
+		<div id="more-links">
+			<h2>Links &amp; Articles</h2>
+			<p><a class="more-link" href="http://www.nasa.gov/mission_pages/newhorizons/main">New Horizons mission</a>&nbsp;&nbsp;&#8594;&nbsp;&nbsp;NASA's journey to study the outer most dwarf planet in our solar system; 
+			Pluto and its moons.</p>
+			<p><a class="more-link" href="http://hubblesite.org/explore_astronomy/black_holes/">Black Holes</a>&nbsp;&nbsp;&#8594;&nbsp;&nbsp;A deeper view of what a black hole is.</p>
+			<p><a class="more-link" href="http://www.space.com/20929-dark-energy.html">What is Dark Energy?</a>&nbsp;&nbsp;&#8594;&nbsp;&nbsp;An article that takes the most mysterious energy source of our universe into consideration.</p>
+		</div>
+	</div>
+<!-- End of div = wrapper -->
+</div>
+<p id="tip"><strong>Tip:</strong> Use the navigation bar to make your life a more pleasant place. <span>&#8594;</span></p>
+<p id="under-hood"><span><strong>Tip:</strong></span>&nbsp;&nbsp;&nbsp;&nbsp; <span>Right Click</span> &#8594; <span>Show Source Code</span> to look under the hood.</p>
+
+<p id="footer" align="center"><em>Copyright &copy; Jovan Polus 2014-2015</em></p>
+</body>
+</html>

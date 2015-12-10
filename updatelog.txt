@@ -1,0 +1,41 @@
+<------ Update Notes - Our Solar System ------->
+
+							______________
+ __________________________| 17/12 - 2014 |_________________________________
+|	DONE																	|
+|																			|
+|- Added favicon.ico.														|
+|- Moved the .css files from their own directory onto the root directory.	|
+|- Deleted fonts that were not used (shortened code in css).				|
+|- Deleted images and .psd files that were not necessary.					|
+|																			|
+|	CONSIDERING																|
+|																			|
+|- Finish the code of the remaining planets (span).							|
+|- More user interaction (button to stop rotation?).						|
+|																			|
+|													Folder Size: 1.55 MB	|
+|___________________________________________________________________________|
+									|											
+									|
+									|
+									|
+									|
+									|
+							______________
+ __________________________| 18/12 - 2014 |_________________________________
+|	DONE																	|
+|																			|
+|- Added Uranus and Neptune tooltips.										|
+|- Reduced the map size by optimizing the symbol images to 100px width 		|
+|  and xpx height.															|
+|- Finished the code of all the remaining planets (span).					|
+|																			|
+|	CONSIDERING																|
+|																			|
+|- Fine-tuning the CSS code.												|
+|																			|
+|																			|
+|																			|
+|													 Folder Size: 542 kB	|
+|___________________________________________________________________________|

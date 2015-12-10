@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>More...</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="more.css">
+	<link rel="shortcut icon" href="../favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		window.onload=function(){
+			var $root = $('html, body');
+			$root.css({'background': '#121A1F'});
+		}
+	</script>
+</head>
+<body>
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="solar_system">
+			<img src="..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="about">
+			<img  src="..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="keywords">
+			<img src="..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="more">
+			<img class="selected" src="..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	<div id="content">
+		<h2 id="more-head">More</h2>
+		<div id="more-text">If you're willing to dig deeper into the anatomy of our solar system and want to find out more about space in general, then definitely check out the material below which includes a video 
+		from <a href="https://www.youtube.com/user/MacManLtd">MacManLTD</a> who precisely goes over the most known celestial bodies that orbit around the Sun. I also included some 
+		articles &amp; links that you might find interesting, especially the Dark Matter and Dark Energy ones.</div>
+		<center><iframe src="https://www.youtube.com/embed/QfOF0bRBFJ4?hd=1&iv_load_policy=3&controls=2" align="middle" frameborder="0" allowfullscreen seamless>
+		</iframe></center>
+		<div id="more-links">
+			<h2>Links &amp; Articles</h2>
+			<p><a class="more-link" href="http://www.nasa.gov/mission_pages/newhorizons/main">New Horizons mission</a>&nbsp;&nbsp;&#8594;&nbsp;&nbsp;NASA's journey to study the outer most dwarf planet in our solar system; 
+			Pluto and its moons.</p>
+			<p><a class="more-link" href="http://hubblesite.org/explore_astronomy/black_holes/">Black Holes</a>&nbsp;&nbsp;&#8594;&nbsp;&nbsp;A deeper view of what a black hole is.</p>
+			<p><a class="more-link" href="http://www.space.com/20929-dark-energy">What is Dark Energy?</a>&nbsp;&nbsp;&#8594;&nbsp;&nbsp;An article that takes the most mysterious energy source of our universe into consideration.</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>About</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="about.css">
+	<link rel="shortcut icon" href="../favicon.ico"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		window.onload=function(){
+			var $root = $('html, body');
+			$root.css({'background': '#121A1F'});
+		}
+	</script>
+</head>
+<body>
+	
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="solar_system">
+			<img src="..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="about">
+			<img class="selected" src="..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="keywords">
+			<img src="..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="more">
+			<img src="..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	<div id="content">
+		<h2 id="about-head">About</h2>
+		<p>This page was created as a voluntary project to include some of the basics of CSS, HTML and the tiniest bit of JavaScript & the jQuery library.
+		<br>I decided to make the page about the solar system because of my interest in Astronomy and for the sake of teaching others about our own neighborhood 
+		of celestial bodies.
+		<br>I chose this type of project not only to express my creativity but to show others that it's okay to choose your own type of project, as long as you include
+		everything that you've learned (tip: including extra things will always give you better grades).
+		<br><br>It all started with two circles; one big yellow and the other one being little and blue, which were included in a project that <a href="http://codecademy.com/">
+		CodeCademy</a> (a site I highly recommend)
+		suggested for new users. The idea was to create a very simple version of the solar system by making the blue circle orbit around the yellow one and at the same time
+		having a grey circle orbiting around the blue one, which would represent the orbits of the moon and the earth.
+		<center><br><br>The earliest version of Our Solar System:</p></center>
+		<center><img id="firstversion" src="..\images\inthebeginning.png" alt="In the beginning"></img></center>
+		<br><br><p>Which was backed up with the HTML and CSS code:</p>
+		<div id="code">
+		<br><p class="pre-title">index</p>
+			<div class="pre-background">
+			<pre>
+<span style="color: orange; margin-left: 10%;">&lt;html></span>
+	<span style="color: orange; margin-left: 10%;">&lt;head></span>
+		<span style="color: orange; margin-left: 10%;">&lt;link</span><span style="color: #ff7575;"> rel</span>= <span style="color: yellow;">"stylesheet"</span><span style="color: #ff7575;"> href</span>= <span style="color: yellow;">"style.css"</span><span style="color: orange;">/></span>
+	<span style="color: orange; margin-left: 10%;">&lt;/head></span>
+   
+	<span style="color: orange; margin-left: 10%;">&lt;body></span>
+		<span style="color: green; margin-left: 10%;">&lt;!-- Right below is an image of the sun --></span>
+		<span style="color: orange; margin-left: 10%;">&lt;img</span> <span style="color: #ff7575;">id</span>= <span style="color: yellow;">"sun"</span> <span style="color: #ff7575;">src</span>= <span style="color: yellow;">"http://goo.gl/PmbqZa"</span><span style="color: orange;">></span>
+		<span style="color: orange; margin-left: 10%;">&lt;img</span> <span style="color: #ff7575;">id</span>= <span style="color: yellow;">"earth"</span> <span style="color: #ff7575;">src</span>= <span style="color: yellow;">"http://goo.gl/41IWnf"</span><span style="color: orange;">></span>
+		<span style="color: green; margin-left: 10%;">&lt;!-- Insert the 'earth' on the next line --></span>
+	<span style="color: orange; margin-left: 10%;">&lt;/body></span>
+<span style="color: orange; margin-left: 10%;">&lt;/html></span>
+			</pre>
+			</div>
+			<br><br><p class="pre-title">style.css</p>
+			<div class="pre-background">
+			<pre>
+	<span style="color: #12b1ff;">html, body</span> <span style="color: orange;">{</span>
+		<span style="color: green;">/&#42; The universe takes up all available space &#42;/</span>
+		<span style="color: #dbbc71;">width</span>: 100%;
+		<span style="color: #dbbc71;">height</span>: 100%;
+					
+		<span style="color: green;">/&#42; The universe is black &#42;/</span>
+		<span style="color: #dbbc71;">background-color</span>: black;
+	<span style="color: orange;">}</span>
+
+	<span style="color: #ffdd12;">#sun</span> <span style="color: orange;">{</span>
+		<span style="color: #dbbc71;">position</span>: absolute;
+		<span style="color: green;">/&#42; Positions the top-left corner of the image to be &#42;
+		/&#42; in the middle of the box &#42;/</span>
+		<span style="color: #dbbc71;">top</span>: 50%;
+		<span style="color: #dbbc71;">left</span>: 50%;
+					
+		<span style="color: green;">/&#42; Play with these numbers to see what it does &#42;/</span>
+		<span style="color: #dbbc71;">height</span>: 200px;
+		<span style="color: #dbbc71;">width</span>: 200px;
+		<span style="color: #dbbc71;">margin-top</span>: -100px; 
+		<span style="color: #dbbc71;">margin-left</span>: -100px;
+	<span style="color: orange;">}</span>
+
+	<span style="color: #ffdd12;">#earth</span> <span style="color: orange;">{</span>
+		<span style="color: green;">/&#42; Style your earth &#42;/</span>
+	<span style="color: orange;">}</span>
+
+	<span style="color: #ffdd12;">#earth-orbit</span> <span style="color: orange;">{</span>
+		<span style="color: green;">/&#42; For Section #2 &#42;/</span>
+	<span style="color: orange;">}</span>
+			</pre>
+			</div>
+			</div>
+	</div>
+</body>
+</html>

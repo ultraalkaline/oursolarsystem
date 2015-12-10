@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Our Solar System</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="author" content="Jovan Polus">
+	<meta name="keywords" content="HTML,CSS,JavaScript,jQuery,Solar,Astronomy">
+	<meta name="description" content="Our Solar System">
+	<link rel="stylesheet" href="solar_system.css">
+	<link rel="shortcut icon" href="../favicon.ico"/>
+	<!--Implementation of jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!--Cookie-->
+	<script language="JavaScript">
+		// c_name = cookie name
+		// c_value = cookie value
+		// ex_min = expiration in minutes
+		function setCookie(c_name, c_value, ex_min) {
+			var d = new Date();
+			d.setTime(d.getTime() + (ex_min * 60 * 1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = c_name + "=" + c_value + "; " + expires;
+		}
+	</script>
+	<!--Change of Background-->
+	<script>
+		function backgroundChange() {
+			$('body, html').css({'background-color': '#121A1F'});
+		}
+	</script>
+	<script>
+		function welcome1 () {
+			$('.message').each(function(i) {
+				$(this).delay((i++) * 2000).fadeTo(700, 1);
+				$(this).delay(1400).fadeOut(300);
+			}),
+			setTimeout(function() {
+				var symbol = document.getElementsByClassName("solar-body");
+				$('.solar-body').each(function(i) {
+					$(this).delay((i++) * 200).fadeTo(400, 1); 
+				})
+			}, 5000);
+		}
+	</script>
+	<!--Introduction Message-->
+	<script>
+		function welcomeMessage() {
+			var lastVisitedCookieName = 'last-visited';
+			if (!document.cookie.indexOf(lastVisitedCookieName) > -1) {
+				welcome1();
+				setCookie(lastVisitedCookieName, "1", 20);
+			}
+			else if (document.cookie.indexOf(lastVisitedCookieName) > -1) {
+				setTimeout(function() {
+					$('.solar-body').each(function(i) {
+					$(this).delay((i++) * 200).fadeTo(400, 1); 
+					})
+				}, 500);
+			}
+		}
+	</script>
+	<!--Onload Functions-->
+	<script>
+		window.onload=function() {
+			backgroundChange();
+			welcomeMessage();
+		}
+	</script>
+	<!--Mobile Detection-->
+	<script>
+		var isMobile = {
+			Android: function() {
+				return navigator.userAgent.match(/Android/i);
+			},
+			BlackBerry: function() {
+				return navigator.userAgent.match(/BlackBerry/i);
+			},
+			iOS: function() {
+				return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+			},
+			Opera: function() {
+				return navigator.userAgent.match(/Opera Mini/i);
+			},
+			Windows: function() {
+				return navigator.userAgent.match(/IEMobile/i);
+			},
+			any: function() {
+				return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+			}
+		};
+		if (!isMobile.any()) 
+		{
+			if (confirm("It seems like you're on a PC. Do you want to head to the desktop version of the website?"))
+			{
+				window.location = "http://oursolarsystem.co/";
+			}
+			else 
+			{
+				//Do nothing.
+			}
+		}
+		else 
+		{
+			//Do nothing.
+		}
+	</script>
+	</head>
+<body>
+	<div id="navigation">
+		<a class="navigation-link" id="solar-system" href="solar_system.html">
+			<img class="selected" src="..\images\planet.png" alt="Solar System"/>
+		</a>
+		<a class="navigation-link" id="about" href="about.html">
+			<img src="..\images\about.png" alt="About"/>
+		</a>
+		<a class="navigation-link" id="keywords" href="keywords.html">
+			<img src="..\images\keywords.png" alt="Keywords"/>
+		</a>
+		<a class="navigation-link" id="more" href="more.html">
+			<img src="..\images\more.png" alt="More"/>
+		</a>
+	</div>
+	<div id="content">
+		<h2 class="message">Welcome!</h2>
+		<h2 class="message">Choose a Celestial Body.</h2>
+		<a href="planets/sun">
+			<img class="solar-body" alt="The Sun" src="..\images\thumbnails\sun_thumb.png"/>
+		</a>
+		<a href="planets/mercury">
+			<img class="solar-body" alt="Mercury" src="..\images\thumbnails\mercury_thumb.png"/>
+		</a>
+		<a href="planets/venus">
+			<img class="solar-body" alt="Venus" src="..\images\thumbnails\venus_thumb.png"/>
+		</a>
+		<a href="planets/earth">
+			<img class="solar-body" alt="Earth" src="..\images\thumbnails\earth_thumb.png"/>
+		</a>
+		<a href="planets/mars">
+			<img class="solar-body" alt="Mars" src="..\images\thumbnails\mars_thumb.png"/>
+		</a>
+		<a href="planets/asteroid_belt">
+			<img class="solar-body" alt="Asteroid Belt" src="..\images\thumbnails\asteroid_belt_thumb.png"/>
+		</a>
+		<a href="planets/jupiter">
+			<img class="solar-body" alt="jupiter" src="..\images\thumbnails\jupiter_thumb.png"/>
+		</a>
+		<a href="planets/saturn">
+			<img class="solar-body" alt="Saturn" src="..\images\thumbnails\saturn_thumb.png"/>
+		</a>
+		<a href="planets/uranus">
+			<img class="solar-body" alt="Uranus" src="..\images\thumbnails\uranus_thumb.png"/>
+		</a>
+		<a href="planets/neptune">
+			<img class="solar-body" alt="Neptune" src="..\images\thumbnails\neptune_thumb.png"/>
+		</a>
+		<a href="planets/pluto">
+			<img class="solar-body" alt="Pluto" src="..\images\thumbnails\pluto_thumb.png"/>
+		</a>
+	</div>
+	
+</body>
+</html>

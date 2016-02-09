@@ -1,4 +1,4 @@
-﻿/* Custom Fonts */
+/* Custom Fonts */
 	@font-face {
 		font-family: spaceFont;
 		src: url(fonts/space.otf);
@@ -103,7 +103,7 @@
 		background: black;
 		width: 80%;
 		height: 100%;
-		border: 0.125em ridge #5c5b5b;
+		border: 2px solid #5c5b5b;
 		border-radius: 10px;
 	}
 	.span-table {
@@ -153,11 +153,9 @@
 	#keywords-table td:first-child {
 		line-height: 100%;
 		font-family: philosopherFont;
-		border: 1px solid rgba(229, 229, 229, .3);
-		border-radius: 6px;
-		background: #354A5B;
+		background: #34495E;
 		font-size: 20px;
-		color: #6fa2c1;
+		color: #FFFFFF;
 	}
 	#keywords-table td:nth-child(2) {
 		background: #4e708b;
@@ -218,7 +216,7 @@
 		font-family: quadrantaFont;
 		font-size: 1.8em;
 		color: #CCC;
-		text-shadow: 6px 6px #32312b;
+		text-shadow: 3px 3px #32312b;
 		
 		-webkit-transition : color 500ms ease-out; 
 		   -moz-transition : color 500ms ease-out;
@@ -239,7 +237,6 @@
 	#title-link:link {
 		color: #5d939f;
 		text-decoration: none;
-		text-shadow: 6px 6px #2b2c32;
 	}
 	#title-link:visited {
 		color: #5d939f;
@@ -252,7 +249,7 @@
 		/* Second Title Style */
 		text-align: center;
 		position: relative;
-		margin-top: -35px;
+		margin-top: -30px;
 		margin-left: 10px;
 		font-family: urbanFont;
 		font-size: 18px;
@@ -1777,7 +1774,7 @@
 	
 	position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
     border-radius: 100%;
 	background: #FFFF00;
     box-shadow: 0 0 100px rgba(255, 255, 0, 0.4);
@@ -2032,7 +2029,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 600px;
 	height: 600px;
@@ -2054,7 +2051,7 @@
 	/* Asteroid Belt's Orbit's Style */
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 290px;
 	height: 290px;
@@ -2077,7 +2074,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 525px;
 	height: 525px;
@@ -2100,7 +2097,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 460px;
 	height: 460px;
@@ -2123,7 +2120,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 385px;
 	height: 385px;
@@ -2146,7 +2143,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 320px;
 	height: 320px;
@@ -2169,7 +2166,7 @@
 	
 	position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
 	
     width: 243px;
     height: 243px;
@@ -2192,7 +2189,7 @@
 	
     position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
     
     width: 123.75px;
     height: 123.75px;
@@ -2215,7 +2212,7 @@
 	 
     position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
     
     width: 90px;
     height: 90px;
@@ -2238,7 +2235,7 @@
 	
     position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
     
     width: 180px;
     height: 180px;
@@ -2409,7 +2406,7 @@
 	
 	position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
     
     width: 90px;
     height: 90px;
@@ -2432,7 +2429,7 @@
 	
 	position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
     
     width: 123.75px;
     height: 123.75px;
@@ -2455,7 +2452,7 @@
 	
 	position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
     
     width: 180px;
     height: 180px;
@@ -2477,7 +2474,7 @@
 	
 	position: absolute;
     top: 500px;
-    left: 52%;
+    left: 50%;
 	
     width: 243px;
     height: 243px;
@@ -2499,7 +2496,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 320px;
 	height: 320px;
@@ -2521,7 +2518,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 385px;
 	height: 385px;
@@ -2541,7 +2538,7 @@
 #uranus-orbit-style {
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 460px;
 	height: 460px;
@@ -2563,7 +2560,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 525px;
 	height: 525px;
@@ -2585,7 +2582,7 @@
 	
 	position: absolute;
 	top: 500px;
-    left: 52%;
+    left: 50%;
 	
 	width: 600px;
 	height: 600px;

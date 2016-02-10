@@ -10,12 +10,20 @@
 	src: url(../fonts/capsuula.ttf);
 }
 @font-face {
-	font-family: philosopherFont;
-	src: url(../fonts/philosopher.ttf);
-}
-@font-face {
 	font-family: champagneFont;
 	src: url(../fonts/champagne.ttf);
+}
+@font-face {
+	font-family: walkwaySemiFont;
+	src: url(../fonts/walkway-semibold.ttf);
+}
+@font-face {
+	font-family: walkwayBoldFont;
+	src: url(../fonts/walkway-bold.ttf);
+}
+@font-face {
+	font-family: spaceFont;
+	src: url(../fonts/space.otf);
 }
 ::-webkit-scrollbar { 
     display: none; 
@@ -74,65 +82,45 @@ a {
 		text-shadow: 3px 3px #5a0020;
 	}
 	#keywords-table {
-		position: absolute;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 5em;
-		
-		width: 99%;
-		height: 0em;
+		position: relative;
+		border-radius: 10px;
+		background: #34495E;
+		border-collapse: collapse;
+		margin-top: 20px;
+		margin-bottom: 80px;
+	}
+	#keywords-table tr:not(:last-child) {
+		border-bottom: 1px solid #aeaeae;
 	}
 	#keywords-table td {
 		line-height: 110%;
-		font-family: philosopherFont; 
-	}
-	#keywords-table td:first-child {
-		line-height: 100%;
-		font-family: philosopherFont;
-		border: 1px solid rgba(229, 229, 229, .3);
-		border-radius: 6px;
-		background: #354A5B;
-		font-size: 1em;
-		color: #6fa2c1;
-	}
-	#keywords-table td:nth-child(2) {
-		background: #4e708b;
-		border: 1px solid rgba(229, 229, 229, .3);
-		border-radius: 6px;
-		color: black;
-		font-size: 1em;
-	}
-	#keywords-table td:nth-child(3) {
-		background: #798e9f;
-		border: 1px solid rgba(229, 229, 229, .3);
-		border-radius: 6px;
+		font-family: walkwaySemiFont;
 		text-align: center;
-		padding-bottom: 10px;
-		padding-top: 10px;
-		line-height: 110%;
-		font-size: 0.9em;
-	}
-	#keywords-table td:nth-child(4) {
-		text-align: center;
+		color: #FFFFFF;
 		padding: 10px;
-		background: #94adc1;
-		border: 1px solid rgba(229, 229, 229, .3);
-		border-radius: 6px;
-	}	
+	}
 	#keywords-table th {
-		background: #515151;
-		border: 1px solid rgba(255, 255, 255, .3);
-		font-family: capsuulaFont;
-		font-size: 1em;
-		padding: 5px;
-		color: #98bddb;
-		height: 100%;
+		font-family: spaceFont;
+		font-size: 16px;
+		padding: 15px;
+		color: #ffb400;
+		height: 30px;
+		background: #547290;
+	}
+	#keywords-table th:first-child {
+		border-top-left-radius: 10px;
+		-webkit-border-top-left-radius: 10px;
+		-moz-border-top-left-radius: 10px;
+	}
+	#keywords-table th:last-child {
+		border-top-right-radius: 10px;
+		-webkit-border-top-right-radius: 10px;
+		-moz-border-top-right-radius: 10px;
 	}
 	#keywords-table a {
 		text-decoration: none;
-		color: black;
+		color: #fd72b8;
+		font-family: walkwayBoldFont;
 		-webkit-transition: text-shadow 500ms ease-out; 
 		-moz-transition: text-shadow 500ms ease-out;
 		-o-transition: text-shadow 500ms ease-out;
@@ -143,6 +131,11 @@ a {
 	#keywords-table a:visited {
 		text-decoration: none;
 	}
+	#keywords-table a:hover {
+		text-shadow: 0 0 5px #6f9cc1;
+	}
+	
+	
 	
 	#content p:nth-child(2) {
 		font-family: champagneFont;

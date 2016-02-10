@@ -1,4 +1,4 @@
-/* Custom Fonts */
+﻿/* Custom Fonts */
 	@font-face {
 		font-family: spaceFont;
 		src: url(fonts/space.otf);
@@ -51,6 +51,10 @@
 	@font-face {
 		font-family: neotericFont;
 		src: url(fonts/neoteric.ttf);
+	}
+	@font-face {
+		font-family: bebasFont;
+		src: url(fonts/bebas.otf);
 	}
 	::-webkit-scrollbar { 
 		display: none; 
@@ -143,13 +147,6 @@
 		/* Title's Style */
 		position: relative;
 		white-space: nowrap;
-		text-align: center;
-		margin-top: -25px;
-		font-family: quadrantaFont;
-		font-size: 1.8em;
-		color: #CCC;
-		text-shadow: 3px 3px #32312b;
-		
 		-webkit-transition : color 500ms ease-out; 
 		   -moz-transition : color 500ms ease-out;
 		     -o-transition : color 500ms ease-out;
@@ -159,6 +156,19 @@
             -ms-animation: fadein 3s; /* Internet Explorer */
              -o-animation: fadein 3s; /* Opera < 12.1 */
                 animation: fadein 3s;
+	}
+	#title h1 {
+		font-family: bebasFont;
+		font-size: 3.2em;
+		color: #CCC;
+		letter-spacing: 2px;
+		text-align: center;
+		border: 5px solid #5d939f;
+		width: 6.6em;
+		height: 1.1em;
+		padding: 2px;
+		margin: auto;
+		margin-top: 10px;
 	}
 	#title-link {
 		position: relative;
@@ -181,7 +191,7 @@
 		/* Second Title Style */
 		text-align: center;
 		position: relative;
-		margin-top: -30px;
+		margin-top: 5px;
 		margin-left: 10px;
 		font-family: urbanFont;
 		font-size: 18px;
@@ -285,7 +295,7 @@
                 animation: fadein 3s; /* Standard */
 	}
 	.link-head {
-		font-family: urbanFont;
+		font-family: bebasFont;
 		font-size: 40px;
 		text-align: center;
 		color: #F7A22E;
@@ -351,6 +361,7 @@
 		border: 3px solid #008ab2;
 		border-radius: 10px;
 		max-width: 100%;
+		margin-top: 5px;
 	}
 	#about center {
 		font-family: walkwayboldFont;
@@ -401,8 +412,19 @@
 		font-family: spaceFont;
 		font-size: 16px;
 		padding: 15px;
-		color: #ff6c6c;
+		color: #ffb400;
 		height: 30px;
+		background: #547290;
+	}
+	#keywords-table th:first-child {
+		border-top-left-radius: 10px;
+		-webkit-border-top-left-radius: 10px;
+		-moz-border-top-left-radius: 10px;
+	}
+	#keywords-table th:last-child {
+		border-top-right-radius: 10px;
+		-webkit-border-top-right-radius: 10px;
+		-moz-border-top-right-radius: 10px;
 	}
 	#keywords-table a {
 		text-decoration: none;
@@ -505,7 +527,7 @@
 	#solar-list {
 		/* General List Style */
 		margin-top: 7.5em;
-		margin-left: 3em;
+		margin-left: 1em;
 		font-family: jlsFont;
 		list-style-type: none;
 		font-size: 1.875em;
@@ -2015,7 +2037,7 @@
 	width: 600px;
 	height: 600px;
 	margin-top: -300px;
-	margin-left: -250px;
+	margin-left: -300px;
 	
 	border-width: 1.3px;
 	border-style: hidden;
@@ -2568,7 +2590,7 @@
 	width: 600px;
 	height: 600px;
 	margin-top: -300px;
-	margin-left: -250px;
+	margin-left: -300px;
 	
 	border-width: 1.3px;
 	border-style: solid;

@@ -166,7 +166,8 @@
 		border: 5px solid #5d939f;
 		width: 6.6em;
 		height: 1.1em;
-		padding: 2px;
+		padding-left: 5px;
+		padding-right: 10px;
 		margin: auto;
 		margin-top: 10px;
 	}
